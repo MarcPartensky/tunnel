@@ -1,0 +1,12 @@
+2021/05/02 18:27:16 autossh[70607]: bind on 127.0.0.1:7124: Address already in use
+2021/05/02 18:27:34 autossh[70635]: starting ssh (count 1)
+2021/05/02 18:27:34 autossh[70635]: ssh child pid is 70636
+2021/05/02 18:27:40 autossh[70635]: received signal to exit (2)
+2021/05/02 18:27:42 autossh[70646]: starting ssh (count 1)
+2021/05/02 18:27:42 autossh[70646]: ssh child pid is 70647
+2021/05/02 18:32:43 autossh[70646]: received signal to exit (2)
+2021/05/02 18:33:01 autossh[71106]: starting ssh (count 1)
+2021/05/02 18:33:01 autossh[71106]: ssh child pid is 71107
+2021/05/02 18:33:54 autossh[71106]: received signal to exit (2)
+2021/05/02 18:35:53 autossh[71356]: starting ssh (count 1)
+2021/05/02 18:35:53 autossh[71356]: ssh child pid is 71357
