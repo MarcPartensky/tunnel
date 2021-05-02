@@ -44,10 +44,14 @@ rtunnel() {
 		tunnel@marcpartensky.com
 }
 
-mounttunnel() {
+mountvps() {
+	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
+}
+
+mountmini() {
 	sshfs marc@localhost:/ -p 7122 /Users/marcpartensky/volumes/mini
 }
-umounttunnel() {
+umountmini() {
 	umount /Users/marcpartensky/volumes/mini
 }
 
