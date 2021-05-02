@@ -14,11 +14,11 @@ iautossh() {
 	./configure
 	make
 	chmod +x autossh
-	mv /autossh /usr/local/bin
+	sudo make install
 	cd -
 }
 
-tunnel() {
+tunnelmini() {
 	autossh -f -M 7123 -N \
 		-o "PubkeyAuthentication=yes" \
 		-o "PasswordAuthentication=no" \
@@ -31,7 +31,7 @@ tunnel() {
 		tunnel@marcpartensky.com
 }
 
-rtunnel() {
+rtunnelmini() {
 	autossh -f -M 7124 -N \
 		-o "PubkeyAuthentication=yes" \
 		-o "PasswordAuthentication=no" \
@@ -43,6 +43,33 @@ rtunnel() {
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
 }
+
+tunneltower() {
+	autossh -f -M 7124 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-L 7121:localhost:7121 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
+rtunneltower() {
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7121:localhost:22 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
 
 mountvps() {
 	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
