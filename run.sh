@@ -22,11 +22,11 @@ rtunnel() {
 
 
 atunnel() {
-	autossh -f -M 0 -N -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -L 7122:localhost:7122 root@marcpartensky.com
+	autossh -f -M 0 -N -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -L 7122:localhost:7122 root@marcpartensky.com -p 7022
 }
 
 artunnel() {
-	autossh -f -M 0 -N -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -R 7122:localhost:7122 root@marcpartensky.com
+	autossh -f -M 7123 -N -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -R 7122:localhost:22 root@marcpartensky.com -p 7022
 }
 
 control() {
