@@ -1,0 +1,8 @@
+Host tunnel
+    HostName      marcpartensky.com
+    User          tunnel
+    Port          7022
+    IdentityFile  ~/.ssh/tunnel
+    RemoteForward  22 localhost:7122
+    ServerAliveInterval 30
+    ServerAliveCountMax 3

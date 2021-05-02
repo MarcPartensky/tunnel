@@ -32,7 +32,7 @@ tunnel() {
 }
 
 rtunnel() {
-	autossh -f -M 7123 -N \
+	autossh -f -M 7124 -N \
 		-o "PubkeyAuthentication=yes" \
 		-o "PasswordAuthentication=no" \
 		-o "ServerAliveInterval 10" \
@@ -43,6 +43,7 @@ rtunnel() {
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
 }
+
 
 control() {
 	sudo docker run -it \
