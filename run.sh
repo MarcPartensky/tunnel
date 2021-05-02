@@ -44,6 +44,12 @@ rtunnel() {
 		tunnel@marcpartensky.com
 }
 
+mounttunnel() {
+	sshfs marc@localhost:/ -p 7122 /Users/marcpartensky/volumes/mini
+}
+umounttunnel() {
+	umount /Users/marcpartensky/volumes/mini
+}
 
 control() {
 	sudo docker run -it \
