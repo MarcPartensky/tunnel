@@ -48,9 +48,14 @@ mountvps() {
 	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
 }
 
+umountvps() {
+	umount /Users/marcpartensky/volumes/vps
+}
+
 mountmini() {
 	sshfs marc@localhost:/ -p 7122 /Users/marcpartensky/volumes/mini
 }
+
 umountmini() {
 	umount /Users/marcpartensky/volumes/mini
 }
