@@ -70,6 +70,32 @@ rtunneltower() {
 		tunnel@marcpartensky.com
 }
 
+tunnelphone() {
+	autossh -f -M 7125 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-L 7110:localhost:7110 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
+rtunnelphone() {
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7110:localhost:8022 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
 
 mountvps() {
 	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
