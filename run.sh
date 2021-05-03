@@ -96,7 +96,7 @@ rtunnelphone() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunnelkong() {
         autossh -f -M 0 -N \
