@@ -87,6 +87,14 @@ umountmini() {
 	umount /Users/marcpartensky/volumes/mini
 }
 
+mounttower() {
+	sshfs marc@localhost:/ -p 7121 /Users/marcpartensky/volumes/tower
+}
+
+umounttower() {
+	umount /Users/marcpartensky/volumes/tower
+}
+
 control() {
 	sudo docker run -it \
 		-v /:/system \
