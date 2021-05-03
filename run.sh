@@ -121,6 +121,14 @@ umounttower() {
 	umount /Users/marcpartensky/volumes/tower
 }
 
+mountphone() {
+	sshfs marc@localhost:/ -p 7110 /Users/marcpartensky/volumes/phone
+}
+
+umountphone() {
+	umount /Users/marcpartensky/volumes/phone
+}
+
 control() {
 	sudo docker run -it \
 		-v /:/system \
