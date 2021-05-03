@@ -29,7 +29,7 @@ tunnelmini() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunnelmini() {
 	autossh -f -M 7124 -N \
@@ -42,7 +42,7 @@ rtunnelmini() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 tunneltower() {
 	autossh -f -M 7125 -N \
@@ -55,7 +55,7 @@ tunneltower() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunneltower() {
 	autossh -f -M 0 -N \
@@ -68,7 +68,7 @@ rtunneltower() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 tunnelphone() {
 	autossh -f -M 7127 -N \
@@ -81,7 +81,7 @@ tunnelphone() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunnelphone() {
 	autossh -f -M 0 -N \
@@ -94,7 +94,7 @@ rtunnelphone() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 
 mountvps() {
@@ -129,13 +129,32 @@ umountphone() {
 	umount /Users/marcpartensky/volumes/phone
 }
 
+umountall() {
+	rm .DS_Store
+	umount /Users/marcpartensky/volumes/*
+}
+
+mountall() {
+	mountphone
+	mountvps
+	mounttower
+}
+
+remountall() {
+	rm .DS_Store
+	umount /Users/marcpartensky/volumes/*
+	mountphone
+	mountvps
+	mounttower
+}
+
 control() {
 	sudo docker run -it \
 		-v /:/system \
 		-p 7122:7122 \
 		-t control
-		marcpartensky/env
-}
+			marcpartensky/env
+		}
 
 # tunnel
 # control
