@@ -122,7 +122,7 @@ umounttower() {
 }
 
 mountphone() {
-	sshfs marc@localhost:/ -p 7110 /Users/marcpartensky/volumes/phone
+	sshfs marc@localhost:. -p 7110 /Users/marcpartensky/volumes/phone
 }
 
 umountphone() {
