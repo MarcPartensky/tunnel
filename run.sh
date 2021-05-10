@@ -19,7 +19,7 @@ iautossh() {
 }
 
 tunnelmini() {
-	autossh -f -M 7123 -N \
+	autossh -f -M 7123 -NT \
 		-o "PubkeyAuthentication=yes" \
 		-o "PasswordAuthentication=no" \
 		-o "ServerAliveInterval 10" \
@@ -32,7 +32,7 @@ tunnelmini() {
 	}
 
 rtunnelmini() {
-	autossh -f -M 7124 -N \
+	autossh -f -M 7124 -NT \
 		-o "PubkeyAuthentication=yes" \
 		-o "PasswordAuthentication=no" \
 		-o "ServerAliveInterval 10" \
@@ -95,6 +95,12 @@ rtunnelphone() {
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
 	}
+
+tunnelall() {
+	tunnelphone
+	tunneltower
+	tunnelmini
+}
 
 
 mountvps() {
