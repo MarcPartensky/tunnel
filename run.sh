@@ -102,6 +102,18 @@ tunnelall() {
 	tunnelmini
 }
 
+rtunnelkong() {
+        autossh -f -M 0 -N \
+                -o "PubkeyAuthentication=yes" \
+                -o "PasswordAuthentication=no" \
+                -o "ServerAliveInterval 10" \
+                -o "ServerAliveCountMax 3" \
+                -o ExitOnForwardFailure=yes \
+                -R 7023:localhost:22 \
+                -p 7022 \
+                -i ~/.ssh/tunnel \
+                tunnel@marcpartensky.com
+}
 
 mountvps() {
 	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
