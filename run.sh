@@ -257,6 +257,11 @@ tunnelall() {
 	tunnelmini
 	tunnelkong
 }
+tunnelall() {
+	tunnelphone
+	tunneltower
+	tunnelmini
+}
 
 
 mountvps() {
