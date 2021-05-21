@@ -110,6 +110,11 @@ rtunnelkong() {
                 -i ~/.ssh/tunnel \
                 tunnel@marcpartensky.com
 }
+tunnelall() {
+	tunnelphone
+	tunneltower
+	tunnelmini
+}
 
 rtunnelkong() {
 	autossh -f -M 0 -N \
