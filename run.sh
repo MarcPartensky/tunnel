@@ -114,6 +114,11 @@ rtunnelkong() {
                 -i ~/.ssh/tunnel \
                 tunnel@marcpartensky.com
 }
+tunnelall() {
+	tunnelphone
+	tunneltower
+	tunnelmini
+}
 
 mountvps() {
 	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
