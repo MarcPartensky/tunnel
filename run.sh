@@ -131,7 +131,7 @@ tunnelall() {
 }
 
 mountvps() {
-	sshfs root@marcpartensky.com:/ -p 7022 /Users/marcpartensky/volumes/vps
+	sshfs vps:/ /Users/marcpartensky/volumes/vps
 }
 
 umountvps() {
@@ -147,7 +147,7 @@ umountmini() {
 }
 
 mounttower() {
-	sshfs marc@localhost:/ -p 7121 /Users/marcpartensky/volumes/tower
+	sshfs tower:/ /Users/marcpartensky/volumes/tower
 }
 
 umounttower() {
