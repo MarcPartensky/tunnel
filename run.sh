@@ -143,6 +143,33 @@ rtunnelpickup() {
 
 }
 
+rtunneltowermcprivate() {
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7129:localhost:25565 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
+rtunneltowermc() {
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7065:localhost:25565 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
+
 tunnelall() {
 	tunnelphone
 	tunneltower
