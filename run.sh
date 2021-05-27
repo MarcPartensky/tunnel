@@ -2,7 +2,9 @@
 
 export AUTOSSH_LOGFILE="./mini.log"
 
-# $port=7122
+# oauto_cache,reconnect,defer_permissions,noappledouble,nolocalcaches,no_readahead
+
+port=7022
 
 logs() {
 	tail -f $AUTOSSH_LOGFILE
