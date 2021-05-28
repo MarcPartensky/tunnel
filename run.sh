@@ -164,6 +164,19 @@ rtunneltowervnc() {
 		tunnel@marcpartensky.com
 }
 
+tunneltowervnc() {
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-L 7130:localhost:7130 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+}
+
 tunnelall() {
 	tunnelphone
 	tunneltower
