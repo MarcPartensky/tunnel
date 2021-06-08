@@ -111,6 +111,19 @@ rtunnelkong() {
                 tunnel@marcpartensky.com
 }
 
+rtunnelplayground() {
+        autossh -f -M 0 -N \
+                -o "PubkeyAuthentication=yes" \
+                -o "PasswordAuthentication=no" \
+                -o "ServerAliveInterval 10" \
+                -o "ServerAliveCountMax 3" \
+                -o ExitOnForwardFailure=yes \
+                -R 7129:localhost:22 \
+                -p 7022 \
+                -i ~/.ssh/tunnel \
+                tunnel@marcpartensky.com
+}
+
 rtunnelpickup() {
         autossh -f -M 0 -N \
                 -o "PubkeyAuthentication=yes" \
