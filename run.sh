@@ -177,6 +177,14 @@ tunneltowervnc() {
 		tunnel@marcpartensky.com
 }
 
+rtunnelisep() {
+	./autossh -f -M 0 -N \
+		-R 7131:localhost:22 \
+		-p 7022 \
+		-i tunnel \
+		tunnel@marcpartensky.com
+}
+
 tunnelall() {
 	tunnelphone
 	tunneltower
