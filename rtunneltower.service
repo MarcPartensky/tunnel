@@ -1,0 +1,12 @@
+[Unit]
+Description=Reverse ssh tunnel to maintain connexion to ssh server.
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no"-NL 7121:localhost:22 root@marcpartensky.com -p 7022
+Restart=always
