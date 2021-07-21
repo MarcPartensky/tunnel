@@ -99,49 +99,44 @@ rtunnelphone() {
 	}
 
 rtunnelkong() {
-        autossh -f -M 0 -N \
-                -o "PubkeyAuthentication=yes" \
-                -o "PasswordAuthentication=no" \
-                -o "ServerAliveInterval 10" \
-                -o "ServerAliveCountMax 3" \
-                -o ExitOnForwardFailure=yes \
-                -R 7023:localhost:22 \
-                -p 7022 \
-                -i ~/.ssh/tunnel \
-                tunnel@marcpartensky.com
-}
-tunnelall() {
-	tunnelphone
-	tunneltower
-	tunnelmini
-}
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7023:localhost:22 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+	}
 
 rtunnelplayground() {
-        autossh -f -M 0 -N \
-                -o "PubkeyAuthentication=yes" \
-                -o "PasswordAuthentication=no" \
-                -o "ServerAliveInterval 10" \
-                -o "ServerAliveCountMax 3" \
-                -o ExitOnForwardFailure=yes \
-                -R 7129:localhost:22 \
-                -p 7022 \
-                -i ~/.ssh/tunnel \
-                tunnel@marcpartensky.com
-}
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7129:localhost:22 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+	}
 
 rtunnelpickup() {
-        autossh -f -M 0 -N \
-                -o "PubkeyAuthentication=yes" \
-                -o "PasswordAuthentication=no" \
-                -o "ServerAliveInterval 10" \
-                -o "ServerAliveCountMax 3" \
-                -o ExitOnForwardFailure=yes \
-                -R 7128:localhost:22 \
-                -p 7022 \
-                -i ~/.ssh/tunnel \
-                tunnel@marcpartensky.com
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7128:localhost:22 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
 
-}
+	}
 
 rtunneltowermcprivate() {
 	autossh -f -M 0 -N \
@@ -154,7 +149,7 @@ rtunneltowermcprivate() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunneltowermc() {
 	autossh -f -M 0 -N \
@@ -167,27 +162,7 @@ rtunneltowermc() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
-
-
-tunnelall() {
-	tunnelphone
-	tunneltower
-	tunnelmini
-}
-
-rtunnelkong() {
-	autossh -f -M 0 -N \
-		-o "PubkeyAuthentication=yes" \
-		-o "PasswordAuthentication=no" \
-		-o "ServerAliveInterval 10" \
-		-o "ServerAliveCountMax 3" \
-		-o ExitOnForwardFailure=yes \
-		-R 7126:localhost:22 \
-		-p 7022 \
-		-i ~/.ssh/tunnel \
-		tunnel@marcpartensky.com
-}
+	}
 
 tunneltowervpn() {
 	autossh -f -M 0 -N \
@@ -200,7 +175,7 @@ tunneltowervpn() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunneltowermcprivate() {
 	autossh -f -M 0 -N \
@@ -213,7 +188,7 @@ rtunneltowermcprivate() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunneltowermc() {
 	autossh -f -M 0 -N \
@@ -226,7 +201,7 @@ rtunneltowermc() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunneltowervnc() {
 	autossh -f -M 0 -N \
@@ -239,7 +214,7 @@ rtunneltowervnc() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 tunneltowervnc() {
 	autossh -f -M 0 -N \
@@ -252,7 +227,7 @@ tunneltowervnc() {
 		-p 7022 \
 		-i ~/.ssh/tunnel \
 		tunnel@marcpartensky.com
-}
+	}
 
 rtunnelisep() {
 	./autossh -f -M 0 -N \
@@ -260,7 +235,8 @@ rtunnelisep() {
 		-p 7022 \
 		-i tunnel \
 		tunnel@marcpartensky.com
-}
+	}
+
 
 tunnelall() {
 	tunnelphone
