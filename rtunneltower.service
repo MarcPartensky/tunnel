@@ -1,5 +1,5 @@
 [Unit]
-Description=AutoSSH tunnel service everythingcli MySQL on local port 5000
+Description=AutoSSH tunnel service for tower.
 After=network.target
 
 [Install]
