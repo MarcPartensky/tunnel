@@ -11,8 +11,8 @@ logs() {
 }
 
 iautossh() {
-	tar xvf autossh-1.4g.tgz
-	cd autossh-1.4g
+	git clone git://git.altlinux.org/people/ldv/packages/autossh.git autossh-source
+	cd autossh-source/autossh
 	./configure
 	make
 	chmod +x autossh
