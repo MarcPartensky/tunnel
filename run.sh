@@ -237,6 +237,19 @@ rtunnelisep() {
 		tunnel@marcpartensky.com
 	}
 
+rtunnelboulimix() {
+	autossh -f -M 0 -N \
+		-o "PubkeyAuthentication=yes" \
+		-o "PasswordAuthentication=no" \
+		-o "ServerAliveInterval 10" \
+		-o "ServerAliveCountMax 3" \
+		-o ExitOnForwardFailure=yes \
+		-R 7021:192.168.0.19:22 \
+		-p 7022 \
+		-i ~/.ssh/tunnel \
+		tunnel@marcpartensky.com
+	}
+
 
 tunnelall() {
 	tunnelphone
