@@ -1,0 +1,13 @@
+[Unit]
+Description=AutoSSH tunnel service for exposing minecraft server running on the tower from *.juniorisep.com
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=marc
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 0 -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -NR 25565:localhost:25565 -p 7022 root@marcpartensky.com
+Restart=on-failure
