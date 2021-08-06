@@ -7,6 +7,7 @@ WantedBy=multi-user.target
 
 [Service]
 Type=simple
+User=marc
 Environment="AUTOSSH_GATETIME=0"
-ExecStart=/usr/bin/autossh -M 0 -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -NR 25565:localhost:25565 -p 25566 -i /root/.ssh/je root@193.248.61.76
+ExecStart=/usr/bin/autossh -M 0 -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o ExitOnForwardFailure=yes -NR 25565:localhost:25565 -p 25566 -i ~/.ssh/je root@193.248.61.76
 Restart=on-failure
