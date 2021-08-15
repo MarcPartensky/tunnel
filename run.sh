@@ -259,7 +259,7 @@ tunnelall() {
 }
 
 mountvps() {
-	sshfs vps:/ /Users/marcpartensky/volumes/vps
+	sshfs -o Compression=no vps:/ /Users/marcpartensky/volumes/vps
 }
 
 umountvps() {
