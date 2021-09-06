@@ -1,0 +1,13 @@
+[Unit]
+Description=AutoSSH tunnel service to connect to docker daemon of the tower.
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=marcpartensky
+Type=simple
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/local/bin/autossh -M 0 -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o PubkeyAuthentication=yes -o PasswordAuthentication=no -NL 2375:localhost:2375 -p 7126 -i ~/.ssh/tunnel tunnel@marcpartensky.com
+Restart=on-failure
