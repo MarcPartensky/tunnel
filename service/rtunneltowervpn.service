@@ -1,0 +1,13 @@
+[Unit]
+Description=AutoSSH tunnel service for accessing openvpn server deployed on the tower.
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=marc
+Type=simple
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 0 -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o PubkeyAuthentication=yes -o PasswordAuthentication=no -NR 1195:localhost:1194 -p 7022 -i ~/.ssh/tunnel tunnel@marcpartensky.com
+Restart=on-failure
