@@ -1,0 +1,12 @@
+[Unit]
+Description=AutoSSH tunnel service for tower.
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 0 -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -NR 7121:localhost:22 -i /home/marc/.ssh/tunnel  tunnel@marcpartensky.com -p 7022
+Restart=on-failure
