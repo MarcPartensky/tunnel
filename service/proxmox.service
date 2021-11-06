@@ -1,0 +1,11 @@
+[Unit]
+Description=AutoSSH tunnel to proxmox server
+After=network.target
+
+[Service]
+User=marc
+Environment="AUTOSSH_GATETIME=0"
+ExecStart=/usr/bin/autossh -M 0 -o PubkeyAuthentication=yes -o PasswordAuthentication=no -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -NL 8006:localhost:8006 -i ~/.ssh/id_rsa marc@gigabix
+
+[Install]
+WantedBy=multi-user.target
