@@ -258,6 +258,7 @@ tunnelall() {
 	tunnelkong
 }
 
+
 mountvps() {
 	sshfs -o Compression=no vps:/ /Users/marcpartensky/volumes/vps
 }
