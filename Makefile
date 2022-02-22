@@ -1,2 +1,2 @@
 setup:
-	sudo ./setup.sh
+	./setup.sh
