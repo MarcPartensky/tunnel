@@ -8,6 +8,7 @@ WantedBy=multi-user.target
 [Service]
 # User=marc
 Type=simple
+AmbientCapabilities=CAP_NET_BIND_SERVICE
 Environment="AUTOSSH_GATETIME=0"
 ExecStart=/usr/bin/autossh -M 0 -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -o PubkeyAuthentication=yes -o PasswordAuthentication=no -NR 7121:localhost:22 -p 7022 -i ~/.ssh/tunnel tunnel@82.165.57.233
 Restart=on-failure
