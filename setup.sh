@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ln -sf $PWD/service $HOME/.config/systemd/user
+ln -sf $PWD/service/* $HOME/.config/systemd/user
 
 # if [ $1 = "install" ]; then
 # 	cd service
